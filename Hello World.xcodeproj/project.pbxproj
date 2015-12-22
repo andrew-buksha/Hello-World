@@ -16,6 +16,7 @@
 		554F8F331C2826EA001EB282 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 554F8F311C2826EA001EB282 /* LaunchScreen.storyboard */; };
 		554F8F3E1C2826EB001EB282 /* Hello_WorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F8F3D1C2826EB001EB282 /* Hello_WorldTests.m */; };
 		554F8F491C2826EB001EB282 /* Hello_WorldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F8F481C2826EB001EB282 /* Hello_WorldUITests.m */; };
+		554F8F581C283104001EB282 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F8F571C283104001EB282 /* CustomCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,8 @@
 		554F8F441C2826EB001EB282 /* Hello WorldUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Hello WorldUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		554F8F481C2826EB001EB282 /* Hello_WorldUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Hello_WorldUITests.m; sourceTree = "<group>"; };
 		554F8F4A1C2826EB001EB282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		554F8F561C283104001EB282 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
+		554F8F571C283104001EB282 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		B7BD4E76F7F9186915396ACE /* Pods-Hello World.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hello World.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hello World/Pods-Hello World.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -116,10 +119,11 @@
 		554F8F221C2826EA001EB282 /* Hello World */ = {
 			isa = PBXGroup;
 			children = (
+				554F8F5A1C283128001EB282 /* Model */,
+				554F8F5B1C28312F001EB282 /* View */,
+				554F8F591C283121001EB282 /* Controller */,
 				554F8F261C2826EA001EB282 /* AppDelegate.h */,
 				554F8F271C2826EA001EB282 /* AppDelegate.m */,
-				554F8F291C2826EA001EB282 /* ViewController.h */,
-				554F8F2A1C2826EA001EB282 /* ViewController.m */,
 				554F8F2C1C2826EA001EB282 /* Main.storyboard */,
 				554F8F2F1C2826EA001EB282 /* Assets.xcassets */,
 				554F8F311C2826EA001EB282 /* LaunchScreen.storyboard */,
@@ -153,6 +157,31 @@
 				554F8F4A1C2826EB001EB282 /* Info.plist */,
 			);
 			path = "Hello WorldUITests";
+			sourceTree = "<group>";
+		};
+		554F8F591C283121001EB282 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				554F8F291C2826EA001EB282 /* ViewController.h */,
+				554F8F2A1C2826EA001EB282 /* ViewController.m */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		554F8F5A1C283128001EB282 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		554F8F5B1C28312F001EB282 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				554F8F561C283104001EB282 /* CustomCell.h */,
+				554F8F571C283104001EB282 /* CustomCell.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		FBD3B951A94A5585CAF082E5 /* Pods */ = {
@@ -347,6 +376,7 @@
 			files = (
 				554F8F2B1C2826EA001EB282 /* ViewController.m in Sources */,
 				554F8F281C2826EA001EB282 /* AppDelegate.m in Sources */,
+				554F8F581C283104001EB282 /* CustomCell.m in Sources */,
 				554F8F251C2826EA001EB282 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
