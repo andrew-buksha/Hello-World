@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SearchResult.h"
 
 @interface CustomCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UIImageView *searchResultImage;
 @property (weak, nonatomic) IBOutlet UILabel *imageNameLbl;
+
+-(void)configureCellWithSearchResult: (SearchResult *) searchResult;
 
 @end

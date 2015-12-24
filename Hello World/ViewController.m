@@ -10,6 +10,8 @@
 #import "CustomCell.h"
 #import "AFNetworking.h"
 #import "SearchResult.h"
+#import "Constants.h"
+#import "SearchManager.h"
 
 @interface ViewController ()
 @property(strong) SearchResult *searchResult;
@@ -20,22 +22,29 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSURL *URL = [NSURL URLWithString:@"https://www.googleapis.com/customsearch/v1?q=cats&key=AIzaSyByc6VWmFBcRFlm8xEz8dqTCqkU9ZboNH4&cx=014527755851884370933:ycblgxqutq4&searchType=image"];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:URL.absoluteString parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-        NSDictionary *dictArr = responseObject;
-        
+    NSString *URLstr = [NSString stringWithFormat:@"%@q=cats%@%@", BASE_URL, API_KEY, FORMAT];
+    
+//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+//    [manager GET:URLstr parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
+//        NSDictionary *dictArr = responseObject;
+//        
+//
+
+//        [self.tableView reloadData];
+//    } failure:^(NSURLSessionDataTask * task, NSError *error) {
+//        NSLog(@"Error: %@", error);
+//    }];
+    SearchManager *searchManager = [[SearchManager alloc] init];
+    
+    [searchManager getSearchResults:URLstr completionBlock:
+     ^(NSDictionary * items) {
         self.searchResults = [[NSMutableArray alloc] init];
-        
-        for(NSDictionary* item in dictArr[@"items"]) {
+        for(NSDictionary* item in items[@"items"]) {
             SearchResult* currentResult = [[SearchResult alloc]
             initWithDictionary:item];
             [self.searchResults addObject:currentResult];
-            [self.tableView reloadData];
         }
-        
-    } failure:^(NSURLSessionDataTask * task, NSError *error) {
-        NSLog(@"Error: %@", error);
+         [self.tableView reloadData];
     }];
 }
 
@@ -53,8 +62,7 @@
     
     SearchResult *searchResult = (self.searchResults)[indexPath.row];
     
-    cell.imageNameLbl.text = searchResult.imageName;
-    
+    [cell configureCellWithSearchResult:searchResult];
     return cell;
 }
 

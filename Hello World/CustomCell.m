@@ -7,6 +7,7 @@
 //
 
 #import "CustomCell.h"
+#import "SearchResult.h"
 
 @implementation CustomCell
 
@@ -18,6 +19,8 @@
 
 }
 
-
+-(void)configureCellWithSearchResult: (SearchResult *) searchResult {
+    self.imageNameLbl.text = searchResult.imageName;
+}
 
 @end
