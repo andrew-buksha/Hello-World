@@ -35,7 +35,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Zj1-ps-Bih">
-                                                    <rect key="frame" x="453" y="5" width="130" height="130"/>
+                                                    <rect key="frame" x="460" y="5" width="130" height="130"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="130" id="Dbk-RX-gcg">
                                                             <variation key="heightClass=regular-widthClass=regular" constant="190"/>
@@ -45,7 +45,7 @@
                                                         </constraint>
                                                     </constraints>
                                                     <variation key="heightClass=regular-widthClass=regular" ambiguous="YES" misplaced="YES">
-                                                        <rect key="frame" x="582" y="-80" width="200" height="300"/>
+                                                        <rect key="frame" x="582" y="-80" width="180" height="300"/>
                                                     </variation>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vw-FZ-Zl5">
@@ -63,28 +63,17 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="Zj1-ps-Bih" firstAttribute="top" secondItem="ySr-Oc-rcv" secondAttribute="topMargin" constant="5" id="2vF-r0-s8d"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="Zj1-ps-Bih" secondAttribute="bottom" constant="5" id="3Jr-VB-uFy"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="Zj1-ps-Bih" secondAttribute="trailing" constant="5" id="6Qk-kO-IcH"/>
-                                                <constraint firstItem="Zj1-ps-Bih" firstAttribute="centerY" secondItem="ySr-Oc-rcv" secondAttribute="centerY" id="A7j-Ja-WIE"/>
                                                 <constraint firstItem="Zj1-ps-Bih" firstAttribute="leading" secondItem="5vw-FZ-Zl5" secondAttribute="trailing" constant="15" id="AtR-Bs-HbW"/>
-                                                <constraint firstItem="5vw-FZ-Zl5" firstAttribute="leading" secondItem="ySr-Oc-rcv" secondAttribute="leadingMargin" constant="5" id="DD9-yd-VLh"/>
+                                                <constraint firstItem="5vw-FZ-Zl5" firstAttribute="leading" secondItem="ySr-Oc-rcv" secondAttribute="leadingMargin" constant="5" id="DD9-yd-VLh">
+                                                    <variation key="heightClass=regular-widthClass=regular" constant="0.0"/>
+                                                </constraint>
                                                 <constraint firstItem="Zj1-ps-Bih" firstAttribute="top" secondItem="ySr-Oc-rcv" secondAttribute="topMargin" constant="5" id="SAB-8j-XzE"/>
                                                 <constraint firstItem="5vw-FZ-Zl5" firstAttribute="centerY" secondItem="ySr-Oc-rcv" secondAttribute="centerY" id="Xry-f8-aF2"/>
-                                                <constraint firstItem="Zj1-ps-Bih" firstAttribute="bottom" secondItem="ySr-Oc-rcv" secondAttribute="bottomMargin" constant="5" id="vVo-i3-XU2"/>
                                             </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="2vF-r0-s8d"/>
-                                                    <exclude reference="A7j-Ja-WIE"/>
-                                                    <exclude reference="vVo-i3-XU2"/>
-                                                </mask>
-                                            </variation>
                                             <variation key="heightClass=regular-widthClass=regular" ambiguous="YES">
                                                 <rect key="frame" x="0.0" y="0.0" width="800" height="140"/>
-                                                <mask key="constraints">
-                                                    <exclude reference="A7j-Ja-WIE"/>
-                                                </mask>
                                             </variation>
                                         </tableViewCellContentView>
                                         <connections>
@@ -113,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="429"/>
+            <point key="canvasLocation" x="399.75" y="429"/>
         </scene>
     </scenes>
     <resources>

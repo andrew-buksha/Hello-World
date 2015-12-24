@@ -17,6 +17,7 @@
 		554F8F3E1C2826EB001EB282 /* Hello_WorldTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F8F3D1C2826EB001EB282 /* Hello_WorldTests.m */; };
 		554F8F491C2826EB001EB282 /* Hello_WorldUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F8F481C2826EB001EB282 /* Hello_WorldUITests.m */; };
 		554F8F581C283104001EB282 /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 554F8F571C283104001EB282 /* CustomCell.m */; };
+		555BAB531C2BD0FA00282281 /* SearchResult.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BAB521C2BD0FA00282281 /* SearchResult.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,8 @@
 		554F8F4A1C2826EB001EB282 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		554F8F561C283104001EB282 /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		554F8F571C283104001EB282 /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		555BAB511C2BD0FA00282281 /* SearchResult.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResult.h; sourceTree = "<group>"; };
+		555BAB521C2BD0FA00282281 /* SearchResult.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResult.m; sourceTree = "<group>"; };
 		B7BD4E76F7F9186915396ACE /* Pods-Hello World.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hello World.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hello World/Pods-Hello World.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -119,6 +122,7 @@
 		554F8F221C2826EA001EB282 /* Hello World */ = {
 			isa = PBXGroup;
 			children = (
+				556924711C2998ED0092C639 /* Util */,
 				554F8F5A1C283128001EB282 /* Model */,
 				554F8F5B1C28312F001EB282 /* View */,
 				554F8F591C283121001EB282 /* Controller */,
@@ -171,6 +175,8 @@
 		554F8F5A1C283128001EB282 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				555BAB511C2BD0FA00282281 /* SearchResult.h */,
+				555BAB521C2BD0FA00282281 /* SearchResult.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -182,6 +188,13 @@
 				554F8F571C283104001EB282 /* CustomCell.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		556924711C2998ED0092C639 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		FBD3B951A94A5585CAF082E5 /* Pods */ = {
@@ -374,6 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				555BAB531C2BD0FA00282281 /* SearchResult.m in Sources */,
 				554F8F2B1C2826EA001EB282 /* ViewController.m in Sources */,
 				554F8F281C2826EA001EB282 /* AppDelegate.m in Sources */,
 				554F8F581C283104001EB282 /* CustomCell.m in Sources */,
@@ -468,7 +482,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -506,7 +520,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -520,9 +534,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Hello World/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "LetMeCode.Hello-World";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -532,9 +548,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Hello World/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "LetMeCode.Hello-World";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
