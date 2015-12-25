@@ -8,10 +8,12 @@
 
 #import "CustomCell.h"
 #import "SearchResult.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation CustomCell
 
 - (void)awakeFromNib {
+    self.searchResultImage.clipsToBounds = true;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -21,6 +23,7 @@
 
 -(void)configureCellWithSearchResult: (SearchResult *) searchResult {
     self.imageNameLbl.text = searchResult.imageName;
+    [self.searchResultImage setImageWithURL:[NSURL URLWithString:searchResult.imgLink] placeholderImage:[UIImage imageNamed:@"placeholder"]];
 }
 
 @end

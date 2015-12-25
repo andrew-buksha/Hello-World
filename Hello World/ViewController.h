@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MaterialTextField.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *searchResults;
+@property (weak, nonatomic) IBOutlet MaterialTextField *searchTxtField;
+
+- (IBAction)searchBtnPressed:(id)sender;
+
 
 @end
 

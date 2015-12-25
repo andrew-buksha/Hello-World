@@ -15,6 +15,7 @@
 -(void)getSearchResults:(NSString *)URLstr completionBlock:
 (void (^)(NSDictionary *))completionBlock {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    
     [manager GET:URLstr parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
         if (responseObject) {
             completionBlock(responseObject);

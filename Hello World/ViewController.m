@@ -21,31 +21,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSString *URLstr = [NSString stringWithFormat:@"%@q=cats%@%@", BASE_URL, API_KEY, FORMAT];
-    
-//    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-//    [manager GET:URLstr parameters:nil progress:nil success:^(NSURLSessionDataTask *task, id responseObject) {
-//        NSDictionary *dictArr = responseObject;
-//        
-//
-
-//        [self.tableView reloadData];
-//    } failure:^(NSURLSessionDataTask * task, NSError *error) {
-//        NSLog(@"Error: %@", error);
-//    }];
-    SearchManager *searchManager = [[SearchManager alloc] init];
-    
-    [searchManager getSearchResults:URLstr completionBlock:
-     ^(NSDictionary * items) {
-        self.searchResults = [[NSMutableArray alloc] init];
-        for(NSDictionary* item in items[@"items"]) {
-            SearchResult* currentResult = [[SearchResult alloc]
-            initWithDictionary:item];
-            [self.searchResults addObject:currentResult];
-        }
-         [self.tableView reloadData];
-    }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -68,6 +43,29 @@
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+}
+
+- (IBAction)searchBtnPressed:(id)sender {
+    
+    NSString *searchTxt = self.searchTxtField.text;
+    
+    if (searchTxt  && ![searchTxt  isEqual: @""]) {
+        NSString *formattedTxt = [searchTxt stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+        NSString *URLstr = [NSString stringWithFormat:@"%@q=%@%@%@", BASE_URL ,formattedTxt, API_KEY, FORMAT];
+        
+        SearchManager *searchManager = [[SearchManager alloc] init];
+        
+        [searchManager getSearchResults:URLstr completionBlock:
+         ^(NSDictionary * items) {
+             self.searchResults = [[NSMutableArray alloc] init];
+             for(NSDictionary* item in items[@"items"]) {
+                 SearchResult* currentResult = [[SearchResult alloc]
+                                                initWithDictionary:item];
+                 [self.searchResults addObject:currentResult];
+             }
+             [self.tableView reloadData];
+         }];
+    }
 }
 
 @end
