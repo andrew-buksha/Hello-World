@@ -9,11 +9,12 @@
 #import <UIKit/UIKit.h>
 #import "MaterialTextField.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *searchResults;
 @property (weak, nonatomic) IBOutlet MaterialTextField *searchTxtField;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 
 - (IBAction)searchBtnPressed:(id)sender;
 

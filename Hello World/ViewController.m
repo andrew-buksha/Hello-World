@@ -41,6 +41,22 @@
     return cell;
 }
 
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return true;
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self.scrollView setContentOffset:CGPointMake(0, 215) animated:true];
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField
+{
+    [self.scrollView setContentOffset:CGPointMake(0, 0) animated:true];
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
 }
