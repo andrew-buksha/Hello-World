@@ -31,19 +31,21 @@ static PHObjectPlaceholder* placeholder;
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 -(void)savePhoto {
     
 }
 
+-(void)showAlertWithTitle: (NSString *)title message: (NSString *) message {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *action = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:action];
+    [self presentViewController:alert animated:true completion:nil];
+    
+}
+
 -(void)FindAndCreateAlbum {
-//    __block PHFetchResult *photosAsset;
-//    __block PHAssetCollection *collection;
-//    __block PHObjectPlaceholder *placeholder;
-    
-    
     PHFetchOptions *fetchOptions = [[PHFetchOptions alloc] init];
     fetchOptions.predicate = [NSPredicate predicateWithFormat:@"title = %@", @"Hello World"];
     collection = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum
@@ -82,7 +84,7 @@ static PHObjectPlaceholder* placeholder;
             } completionHandler:^(BOOL success, NSError *error) {
                 if (success)
                 {
-                    NSLog(@"Done!");
+                    [self showAlertWithTitle:@"Image saved" message:@"Image has been saved to photo album"];
                 } else {
                     NSLog(@"Error: %@", error);
 
