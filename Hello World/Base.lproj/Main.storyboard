@@ -14,7 +14,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ViewController" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -49,14 +49,14 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CkB-WR-CRy">
                                 <rect key="frame" x="0.0" y="112" width="600" height="488"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="j9q-Tz-SfW">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9q-Tz-SfW">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="488"/>
                                         <subviews>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-jP-cfr">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="140" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pqu-jP-cfr">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="488"/>
                                                 <color key="backgroundColor" red="0.95294117647058818" green="0.95294117647058818" blue="0.95294117647058818" alpha="1" colorSpace="calibratedRGB"/>
                                                 <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CustomCell" id="8co-M9-cs0" customClass="CustomCell">
+                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CustomCell" id="8co-M9-cs0" customClass="CustomCell">
                                                         <rect key="frame" x="0.0" y="28" width="600" height="140"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="8co-M9-cs0" id="ySr-Oc-rcv">
@@ -130,10 +130,10 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="j9q-Tz-SfW" firstAttribute="leading" secondItem="CkB-WR-CRy" secondAttribute="leading" id="DUQ-bA-PNR"/>
-                                    <constraint firstAttribute="trailing" secondItem="j9q-Tz-SfW" secondAttribute="trailing" id="FJW-jt-nwA"/>
-                                    <constraint firstItem="j9q-Tz-SfW" firstAttribute="top" secondItem="CkB-WR-CRy" secondAttribute="top" id="PAP-fZ-6qA"/>
-                                    <constraint firstAttribute="bottom" secondItem="j9q-Tz-SfW" secondAttribute="bottom" id="rEa-ZL-o9I"/>
+                                    <constraint firstItem="j9q-Tz-SfW" firstAttribute="centerY" secondItem="CkB-WR-CRy" secondAttribute="centerY" id="4q1-LU-W6j"/>
+                                    <constraint firstItem="j9q-Tz-SfW" firstAttribute="height" secondItem="CkB-WR-CRy" secondAttribute="height" id="Qww-NS-xqf"/>
+                                    <constraint firstItem="j9q-Tz-SfW" firstAttribute="centerX" secondItem="CkB-WR-CRy" secondAttribute="centerX" id="VJL-gT-Jwv"/>
+                                    <constraint firstItem="j9q-Tz-SfW" firstAttribute="width" secondItem="CkB-WR-CRy" secondAttribute="width" id="yfj-nA-nCa"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -145,32 +145,77 @@
                             <constraint firstItem="ncV-cf-Z1E" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="CNe-h2-xlr"/>
                             <constraint firstItem="CkB-WR-CRy" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Eii-gA-k6i"/>
                             <constraint firstItem="CkB-WR-CRy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FBu-5w-U1N"/>
-                            <constraint firstItem="j9q-Tz-SfW" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="GOb-yP-v2u"/>
                             <constraint firstItem="CkB-WR-CRy" firstAttribute="top" secondItem="rto-Qk-5kg" secondAttribute="bottom" constant="5" id="MWI-ic-0Mp"/>
                             <constraint firstItem="rto-Qk-5kg" firstAttribute="leading" secondItem="ncV-cf-Z1E" secondAttribute="trailing" constant="10" id="Yyg-gN-H6b"/>
                             <constraint firstAttribute="trailing" secondItem="rto-Qk-5kg" secondAttribute="trailing" constant="20" id="eXT-Am-tCf"/>
                             <constraint firstItem="rto-Qk-5kg" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="q9A-9k-UhJ"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="0Vj-Cb-8L5"/>
+                    <navigationItem key="navigationItem" id="0Vj-Cb-8L5">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="kjl-6c-TbF"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="scrollView" destination="CkB-WR-CRy" id="zf0-Xj-cDb"/>
                         <outlet property="searchTxtField" destination="ncV-cf-Z1E" id="cNr-O5-fan"/>
                         <outlet property="tableView" destination="Pqu-jP-cfr" id="8Kf-dO-6yU"/>
+                        <segue destination="uZm-6U-Ysk" kind="show" identifier="goToFullscreen" id="9ld-GO-l0c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1211" y="429"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Full ScreenVC-->
+        <scene sceneID="RKa-QJ-qke">
+            <objects>
+                <viewController storyboardIdentifier="FullScreenVC" id="uZm-6U-Ysk" customClass="FullScreenVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hu6-BS-KjA"/>
+                        <viewControllerLayoutGuide type="bottom" id="7d1-Yv-8qS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jTS-8N-NdL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="wHR-Ib-TEO">
+                                <rect key="frame" x="0.0" y="64" width="600" height="492"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wHR-Ib-TEO" firstAttribute="top" secondItem="hu6-BS-KjA" secondAttribute="bottom" id="0TD-YK-BN4"/>
+                            <constraint firstAttribute="trailing" secondItem="wHR-Ib-TEO" secondAttribute="trailing" id="9Zf-hA-oMR"/>
+                            <constraint firstItem="7d1-Yv-8qS" firstAttribute="top" secondItem="wHR-Ib-TEO" secondAttribute="bottom" id="k7u-8q-TgQ"/>
+                            <constraint firstItem="wHR-Ib-TEO" firstAttribute="leading" secondItem="jTS-8N-NdL" secondAttribute="leading" id="tb7-xz-dUv"/>
+                        </constraints>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="A7n-Fe-Wg7">
+                        <barButtonItem key="rightBarButtonItem" title="Сохранить" id="Nqb-oB-HTF">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="saveBtnPressed:" destination="uZm-6U-Ysk" id="kXo-Qb-omG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="imageView" destination="wHR-Ib-TEO" id="T04-rL-rLK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gID-1q-TST" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1904" y="429"/>
+        </scene>
+        <!--Назад-->
         <scene sceneID="RKr-yC-ja0">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6U9-vV-0nR" sceneMemberID="viewController">
+                <navigationController title="Назад" automaticallyAdjustsScrollViewInsets="NO" id="6U9-vV-0nR" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="lQO-E2-M2z">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.011764705882352941" green="0.66274509803921566" blue="0.95686274509803915" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

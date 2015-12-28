@@ -12,6 +12,8 @@
 #import "SearchResult.h"
 #import "Constants.h"
 #import "SearchManager.h"
+#import "FullScreenVC.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface ViewController ()
 @property(strong) SearchResult *searchResult;
@@ -40,6 +42,27 @@
     [cell configureCellWithSearchResult:searchResult];
     return cell;
 }
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+//    [self performSegueWithIdentifier:@"goToFullscreen" sender:nil];
+    FullScreenVC *controller = [self.storyboard instantiateViewControllerWithIdentifier:NSStringFromClass([FullScreenVC class])];
+    SearchResult *searchResult = (self.searchResults)[indexPath.row];
+    
+    controller.imgLink = searchResult.imgLink;
+    
+    [self.navigationController pushViewController:controller animated:YES];
+}
+
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+//{
+//    if ([segue.identifier  isEqual: @"goToFullscreen"]) {
+//        FullScreenVC *fullscreenVC = segue.destinationViewController;
+//        if (fullscreenVC) {
+//            
+//        }
+//    }
+//}
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
