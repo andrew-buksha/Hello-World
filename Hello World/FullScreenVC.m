@@ -84,7 +84,7 @@ static PHObjectPlaceholder* placeholder;
             } completionHandler:^(BOOL success, NSError *error) {
                 if (success)
                 {
-                    [self showAlertWithTitle:@"Image saved" message:@"Image has been saved to photo album"];
+                    [self showAlertWithTitle:@"Сохранено" message:@"Изображение сохранено в фотоальбомы"];
                 } else {
                     NSLog(@"Error: %@", error);
 

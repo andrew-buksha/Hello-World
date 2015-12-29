@@ -158,6 +158,7 @@
                         <outlet property="scrollView" destination="CkB-WR-CRy" id="zf0-Xj-cDb"/>
                         <outlet property="searchTxtField" destination="ncV-cf-Z1E" id="cNr-O5-fan"/>
                         <outlet property="tableView" destination="Pqu-jP-cfr" id="8Kf-dO-6yU"/>
+                        <outlet property="tableViewTopConstraint" destination="PqL-EG-IJq" id="RY6-qZ-o2m"/>
                         <segue destination="uZm-6U-Ysk" kind="show" identifier="goToFullscreen" id="9ld-GO-l0c"/>
                     </connections>
                 </viewController>

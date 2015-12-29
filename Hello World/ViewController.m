@@ -72,12 +72,14 @@
 
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    [self.scrollView setContentOffset:CGPointMake(0, 215) animated:true];
+    [self.scrollView setContentOffset:CGPointMake(0, 250) animated:true];
+    self.tableViewTopConstraint.constant = 250;
 }
 
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     [self.scrollView setContentOffset:CGPointMake(0, 0) animated:true];
+    self.tableViewTopConstraint.constant = 250;
 }
 
 - (void)didReceiveMemoryWarning {
