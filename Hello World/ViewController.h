@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 #import "MaterialTextField.h"
+#import <CoreData/CoreData.h>
+#import "AFNetworking.h"
+#import <AFNetworkReachabilityManager.h>
+
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 

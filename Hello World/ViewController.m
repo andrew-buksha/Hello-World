@@ -8,12 +8,13 @@
 
 #import "ViewController.h"
 #import "CustomCell.h"
-#import "AFNetworking.h"
 #import "SearchResult.h"
 #import "Constants.h"
 #import "SearchManager.h"
 #import "FullScreenVC.h"
 #import "UIImageView+AFNetworking.h"
+#import "AppDelegate.h"
+#import "SearchResultOffline.h"
 
 @interface ViewController ()
 @property(strong) SearchResult *searchResult;
@@ -21,8 +22,26 @@
 
 @implementation ViewController
 
+
+NSMutableArray *offlineResults;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self connected];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [self fetchAndSetResults];
+}
+
+-(void)fetchAndSetResults {
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [app managedObjectContext];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"SearchResultOffline"];
+    
+    NSError *error;
+    
+    offlineResults = [[context executeFetchRequest:fetchRequest error:&error] mutableCopy];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -38,6 +57,22 @@
     CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
     SearchResult *searchResult = (self.searchResults)[indexPath.row];
+    
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [app managedObjectContext];
+    NSError *error;
+    
+    if (![[offlineResults valueForKey:@"imageLink"] containsObject:searchResult.imgLink]) {
+        SearchResultOffline *searchResultOffline = [NSEntityDescription insertNewObjectForEntityForName:@"SearchResultOffline" inManagedObjectContext:context];
+        searchResultOffline.imgTitle = searchResult.imageName;
+        searchResultOffline.imageLink = searchResult.imgLink;
+        [searchResultOffline setSerachResultImage:UIImageJPEGRepresentation(cell.searchResultImage.image, 1.0)];
+        if (![context save:&error]) {
+            NSLog(@"Could not save: %@", error);
+        }
+        
+        [self fetchAndSetResults];
+    }
     
     [cell configureCellWithSearchResult:searchResult];
     return cell;
@@ -70,6 +105,35 @@
     return true;
 }
 
+-(BOOL)connected {
+    __block BOOL reachable;
+    
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusNotReachable:
+                NSLog(@"No internet connection");
+                reachable = NO;
+                break;
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                NSLog(@"WiFi");
+                reachable = YES;
+                break;
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+                NSLog(@"Mobile network");
+                reachable = YES;
+                break;
+            default:
+                NSLog(@"Unknown network status");
+                reachable = NO;
+                break;
+        }
+    }];
+    
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    
+    return reachable;
+}
+
 -(void)textFieldDidBeginEditing:(UITextField *)textField
 {
     [self.scrollView setContentOffset:CGPointMake(0, 250) animated:true];
@@ -79,7 +143,7 @@
 -(void)textFieldDidEndEditing:(UITextField *)textField
 {
     [self.scrollView setContentOffset:CGPointMake(0, 0) animated:true];
-    self.tableViewTopConstraint.constant = 250;
+    self.tableViewTopConstraint.constant = 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -87,6 +151,24 @@
 }
 
 - (IBAction)searchBtnPressed:(id)sender {
+    
+    AppDelegate *app = [[UIApplication sharedApplication] delegate];
+    NSManagedObjectContext *context = [app managedObjectContext];
+    NSError *error;
+    
+    if (offlineResults.count > 0) {
+        for (int x = 0; x < offlineResults.count; x++) {
+            NSManagedObject *offlineResult = (NSManagedObject *)[offlineResults objectAtIndex:x];
+            
+            [context deleteObject:offlineResult];
+            
+            if (![offlineResult.managedObjectContext save:&error]) {
+                NSLog(@"Cannot delete: %@", error.localizedDescription);
+            }
+        }
+    } else {
+        NSLog(@"Already empty");
+    }
     
     NSString *searchTxt = self.searchTxtField.text;
     

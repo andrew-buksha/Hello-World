@@ -23,6 +23,9 @@
 		555BAB5D1C2D515700282281 /* MaterialButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BAB5C1C2D515700282281 /* MaterialButton.m */; };
 		555BAB601C2D517E00282281 /* MaterialTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BAB5F1C2D517E00282281 /* MaterialTextField.m */; };
 		555BAB631C2D67ED00282281 /* FullScreenVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 555BAB621C2D67ED00282281 /* FullScreenVC.m */; };
+		BB2A508E1C3455F8004D1754 /* SearchResultOffline.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB2A508C1C3455F8004D1754 /* SearchResultOffline.xcdatamodeld */; };
+		BB2A50991C347B04004D1754 /* SearchResultOffline+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2A50961C347B04004D1754 /* SearchResultOffline+CoreDataProperties.m */; };
+		BB2A509A1C347B04004D1754 /* SearchResultOffline.m in Sources */ = {isa = PBXBuildFile; fileRef = BB2A50981C347B04004D1754 /* SearchResultOffline.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +80,11 @@
 		555BAB611C2D67ED00282281 /* FullScreenVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullScreenVC.h; sourceTree = "<group>"; };
 		555BAB621C2D67ED00282281 /* FullScreenVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullScreenVC.m; sourceTree = "<group>"; };
 		B7BD4E76F7F9186915396ACE /* Pods-Hello World.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hello World.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hello World/Pods-Hello World.debug.xcconfig"; sourceTree = "<group>"; };
+		BB2A508D1C3455F8004D1754 /* SearchResultOffline.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SearchResultOffline.xcdatamodel; sourceTree = "<group>"; };
+		BB2A50951C347B04004D1754 /* SearchResultOffline+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SearchResultOffline+CoreDataProperties.h"; sourceTree = "<group>"; };
+		BB2A50961C347B04004D1754 /* SearchResultOffline+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SearchResultOffline+CoreDataProperties.m"; sourceTree = "<group>"; };
+		BB2A50971C347B04004D1754 /* SearchResultOffline.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultOffline.h; sourceTree = "<group>"; };
+		BB2A50981C347B04004D1754 /* SearchResultOffline.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultOffline.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +157,7 @@
 				554F8F311C2826EA001EB282 /* LaunchScreen.storyboard */,
 				554F8F341C2826EA001EB282 /* Info.plist */,
 				554F8F231C2826EA001EB282 /* Supporting Files */,
+				BB2A508C1C3455F8004D1754 /* SearchResultOffline.xcdatamodeld */,
 			);
 			path = "Hello World";
 			sourceTree = "<group>";
@@ -193,6 +202,10 @@
 		554F8F5A1C283128001EB282 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				BB2A50951C347B04004D1754 /* SearchResultOffline+CoreDataProperties.h */,
+				BB2A50961C347B04004D1754 /* SearchResultOffline+CoreDataProperties.m */,
+				BB2A50971C347B04004D1754 /* SearchResultOffline.h */,
+				BB2A50981C347B04004D1754 /* SearchResultOffline.m */,
 				555BAB511C2BD0FA00282281 /* SearchResult.h */,
 				555BAB521C2BD0FA00282281 /* SearchResult.m */,
 				555BAB551C2C330B00282281 /* SearchManager.h */,
@@ -303,7 +316,7 @@
 				TargetAttributes = {
 					554F8F1F1C2826EA001EB282 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = JDBYBPJR5R;
+						DevelopmentTeam = 53Q44P34GC;
 					};
 					554F8F381C2826EB001EB282 = {
 						CreatedOnToolsVersion = 7.2;
@@ -415,14 +428,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB2A509A1C347B04004D1754 /* SearchResultOffline.m in Sources */,
 				555BAB531C2BD0FA00282281 /* SearchResult.m in Sources */,
 				555BAB571C2C330B00282281 /* SearchManager.m in Sources */,
 				555BAB5A1C2D513F00282281 /* MaterialView.m in Sources */,
 				555BAB631C2D67ED00282281 /* FullScreenVC.m in Sources */,
 				554F8F2B1C2826EA001EB282 /* ViewController.m in Sources */,
 				554F8F281C2826EA001EB282 /* AppDelegate.m in Sources */,
+				BB2A50991C347B04004D1754 /* SearchResultOffline+CoreDataProperties.m in Sources */,
 				554F8F581C283104001EB282 /* CustomCell.m in Sources */,
 				555BAB601C2D517E00282281 /* MaterialTextField.m in Sources */,
+				BB2A508E1C3455F8004D1754 /* SearchResultOffline.xcdatamodeld in Sources */,
 				555BAB5D1C2D515700282281 /* MaterialButton.m in Sources */,
 				554F8F251C2826EA001EB282 /* main.m in Sources */,
 			);
@@ -571,7 +587,7 @@
 				INFOPLIST_FILE = "Hello World/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "LetMeCode.Hello-World";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AndrewsCompany.Hello-World";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -588,7 +604,7 @@
 				INFOPLIST_FILE = "Hello World/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "LetMeCode.Hello-World";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.AndrewsCompany.Hello-World";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -683,6 +699,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		BB2A508C1C3455F8004D1754 /* SearchResultOffline.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BB2A508D1C3455F8004D1754 /* SearchResultOffline.xcdatamodel */,
+			);
+			currentVersion = BB2A508D1C3455F8004D1754 /* SearchResultOffline.xcdatamodel */;
+			path = SearchResultOffline.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 554F8F181C2826EA001EB282 /* Project object */;
 }
